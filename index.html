@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <title>VITSIGENERAATTORI</title>
+  <style>
+    body { font-family: Arial; text-align: center; margin-top: 50px; }
+    #joke { margin-top: 20px; font-size: 28px; }
+  </style>
+</head>
+<body>
+  <h1>Vitsigeneraattori </h1>
+  <button onclick="getJoke()">Generoi vitsi</button>
+  <div id="joke">Klikkaa nappia saadaksesi vitsin!</div>
+
+  <script>
+    const jokes = 
+    [
+      "Miksi tietokone meni lääkäriin? – Sillä oli virus!",
+      "Miksi mato ei käy koulua? – Koska se on maan alla!",
+      "Mitä tapahtuu, kun yhdistät ankan ja vitsin? – Saat naurulintusen!",
+      "Mitä kissa sanoi kun se kaatui? – Mau.",
+      "Miksi banaani meni lääkäriin? – Se ei kuorinut hyvin.",
+      "Miksi lumiukko meni rannalle? – Se halusi sulaa pois arjesta.",
+      "Mitä teki koodari lounaalla? – Söi while-loopissa.",
+      "Miksi robotti ei pelkää pimeää? – Sillä on yötila.",
+      "Mitä tekee puhuva peruna? – Kommentoi muusia.",
+      "Miksi norsu ei voi käyttää tietokonetta? – Liian isot korvat USB-porttiin.",
+      "Mitä sanoi seinä toiselle? – Tavataan kulmassa!",
+      "Mitä tekee kana, joka on hyvä salaisuuksissa? – Pysyy kuorellaan.",
+      "Miksi appelsiini ei halunnut pelata korttia? – Se pelkäsi tulla puristetuksi.",
+      "Miksi puhelin oli surullinen? – Se menetti yhteyden.",
+      "Mitä tekee kala ilman silmää? – K-l-a.",
+      "Miksi kirahvilla oli huono päivä? – Se oli liian pitkällä päällä.",
+      "Miksi varis ei saanut töitä? – Liikaa mustaa taustaa.",
+      "Miksi munakello meni rikki? – Aika loppui kesken.",
+      "Mitä tekee salainen leipä? – Piiloutuu sämpylään.",
+      "Miksi sieni ei saanut kavereita? – Se oli vähän homeinen.",
+      "Miksi lyijykynä sai potkut? – Se oli liian tylsä.",
+      "Miksi kenguru ei vastannut puhelimeen? – Se oli hyppytauolla.",
+      "Mitä tekee nalle, jolla on univaje? – Karhuilee.",
+      "Miksi lehmä ei voinut olla DJ? – Liikaa moolia.",
+      "Mitä tekee saapas, jolla on kiire? – Saapuu nopeasti.",
+      "Miksi hämähäkki ei tee verkkokauppaa? – Liikaa säikeitä.",
+      "Miksi tomaatti punastui? – Se näki salaatin pukeutuvan.",
+      "Mitä tekee laiska pingviini? – Ei juuri mitään.",
+      "Miksi peili ei valehtele? – Se näkee suoraan lävitsesi.",
+      "Miksi jääkaappi oli iloinen? – Se oli täynnä hyviä juttuja.",
+      "Miksi pizzalähetti ei nauranut? – Ei ollut taikinassa huumoria.",
+      "Miksi kananpoika ylitti tien? – Koska se halusi mennä toiseen vitsiin.",
+      "Miksi kello ei koskaan valehtele? – Aika paljastaa kaiken.",
+      "Mitä tekee älykäs banaani? – Opiskelee kuorossa.",
+      "Miksi puu ei osannut tanssia? – Liian juurtunut paikoilleen.",
+      "Miksi hissi ei ollut kiinnostunut small talkista? – Se käytti vain ylös ja alas -puhetta.",
+      "Mitä tekee lumiukko kesällä? – Itkee hiljalleen pois.",
+      "Miksi juusto ei voinut salata tunteitaan? – Se oli liian läpinäkyvä.",
+      "Mitä tekee vesimeloni, joka haluaa soittaa? – Käyttää hedelmäpuhelinta.",
+      "Miksi kengät riitelivät? – Ne eivät olleet samalla aaltopituudella.",
+      "Mitä tekee viisas mansikka? – Säilyy hillossa.",
+      "Miksi kuu ei koskaan mene bileisiin? – Se tarvitsee tilaa.",
+      "Miksi muna ei koskaan valehtele? – Se voi helposti särkyä.",
+      "Mitä sanoi jääkaappi mikrolle? – Älä lämmitä tunteitani.",
+      "Miksi paperi ei ole hyvä supersankari? – Se repeää paineessa.",
+      "Mitä tekee matemaatikko rannalla? – Laskee aaltoja.",
+      "Miksi appelsiini ei halua mehuksi? – Ei halua puristusta elämässä.",
+      "Miksi kissa ei tykkää sähköpostista? – Liikaa hiiriä ruudulla.",
+      "Miksi tietokone pelkäsi virustarkistusta? – Se tiesi tehneensä jotain väärää."  
+    ];
+
+    function getJoke() 
+    {
+      const randomIndex = Math.floor(Math.random() * jokes.length);
+      document.getElementById("joke").textContent = jokes[randomIndex];
+    }
+  </script>
+</body>
+</html>
