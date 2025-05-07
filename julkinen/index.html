@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <title>Vitsigeneraattori</title>
+  <style>
+    body { font-family: Arial; text-align: center; margin-top: 50px; }
+    #joke { margin-top: 20px; font-size: 1.2em; }
+  </style>
+</head>
+<body>
+  <h1>Vitsigeneraattori 🤖</h1>
+  <button onclick="getJoke()">Generoi vitsi</button>
+  <div id="joke">Klikkaa nappia saadaksesi vitsin!</div>
+
+  <script>
+    async function getJoke() {
+      const response = await fetch('/api/joke');
+      const data = await response.json();
+      document.getElementById('joke').textContent = data.joke;
+    }
+  </script>
+</body>
+</html>
