@@ -11,7 +11,7 @@
 <body>
   <h1>Vitsigeneraattori </h1>
   <button onclick="getJoke()">Generoi vitsi</button>
-  <div id="joke">Klikkaa nappia saadaksesi vitsin!</div>
+  <div id="joke">Klikkaa nappia ja saat kuulla vitsin!</div>
 
   <script>
     const jokes = 
@@ -66,12 +66,25 @@
       "Miksi kissa ei tykkää sähköpostista? – Liikaa hiiriä ruudulla.",
       "Miksi tietokone pelkäsi virustarkistusta? – Se tiesi tehneensä jotain väärää."  
     ];
-
+      
+      let previousIndex = -1; // tää tallentaa sen edellisen vitsin
     function getJoke() 
     {
-      const randomIndex = Math.floor(Math.random() * jokes.length);
-      document.getElementById("joke").textContent = jokes[randomIndex];
-    }
+      let randomIndex;
+
+      do{
+          randomIndex = Math.floor(Math.random() * jokes.length);
+        } while (randomIndex === previousIndex);
+
+          previousIndex = randomIndex;
+
+          const joke = jokes[randomIndex];
+          document.getElementById("joke").textContent = joke;
+
+      const utterance = new SpeechSynthesisUtterance(joke);
+      speechSynthesis.cancel();
+      speechSynthesis.speak(utterance); //täl tuleee äänijuttu
+    } 
   </script>
 </body>
 </html>
